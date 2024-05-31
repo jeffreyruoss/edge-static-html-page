@@ -22,6 +22,12 @@ body {
 	padding: 0px 30px;
 }
 
+.left-section {
+	max-width: 50%;
+	opacity: 0;
+	animation: fadeIn 2s forwards;
+}
+
 @media screen and (max-width: 1249px) {
 	.content {
 		flex-direction: column;
@@ -58,7 +64,7 @@ body {
 }
 
 h1 {
-	font-size: 3em;
+	font-size: 2.4em;
 }
 
 
@@ -151,14 +157,40 @@ a:hover {
 
 .right-section {
 	text-align: center;
+	overflow: hidden;
 }
 
 .right-section .phone-with-hand {
 	width: 100%;
 	max-width: 855px;
+	transform: translateX(50%);
+	animation: slideIn 1s 0.5s forwards;
+	opacity: 0;
 }
 
 .right-section p {
 	margin-top: 10px;
 	font-size: 1.2em;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes slideIn {
+	0% {
+		opacity: 0;
+		transform: translateX(50%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
