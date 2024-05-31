@@ -4,58 +4,158 @@ body {
 	color: #fff;
 	margin: 0;
 	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .container {
-	display: flex;
-	justify-content: space-between;
-	padding: 20px;
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
 }
 
-.left-section {
-	max-width: 50%;
+.content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 30px;
+}
+
+@media screen and (max-width: 1249px) {
+	.content {
+		flex-direction: column;
+	}
+
+	.left-section,
+	.right-section {
+		max-width: 100%;
+	}
+
+	.download-row {
+		flex-direction: column;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.download-row {
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 1250px) {
+	body {
+		height: 100vh;
+	}
+
+	.content {
+		padding: 40px;
+	}
+
+	.left-section {
+		max-width: 50%;
+	}
 }
 
 h1 {
 	font-size: 3em;
 }
 
+
 p {
 	font-size: 1.2em;
 }
 
+a {
+	transition: opacity 0.3s;
+}
+
+a:hover {
+	opacity: 0.6;
+}
+
+@media screen and (min-width: 1440px) {
+	h1 {
+		font-size: 5em;
+	}
+
+	p {
+		font-size: 1.5em;
+	}
+}
+
 .learn-more {
-	color: #1e90ff;
+	color: #1BFCA1;
 	text-decoration: none;
+}
+
+.download-row {
+	margin-top: 58px;
+	margin-bottom: 40px;
+	display: flex;
+}
+
+.download-buttons {
+	margin-right: 84px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (min-width: 768px) {
+	.download-buttons {
+		margin-left: 0;
+		margin-right: 84px;
+	}
 }
 
 .download-buttons img {
 	display: block;
-	margin: 10px 0;
+	margin-bottom: 27px;
 	max-width: 230px;
 }
 
+.qr-code-section {
+	text-align: center;
+}
+
+.qr-code-section .qr-code {
+	max-width: 230px;
+}
+
+.scan-to-download {
+	margin-top: 10px;
+	font-size: 1.2em;
+}
+
+.social-icons {
+	margin-bottom: 40px;
+	text-align: center;
+}
+
 .social-icons img {
-	width: 40px;
+	width: 64px;
 	margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+	.social-icons img {
+		margin-right: 50px;
+	}
+}
+
+@media screen and (min-width: 1250px) {
+	.social-icons {
+		text-align: left;
+	}
 }
 
 .right-section {
 	text-align: center;
 }
 
-.right-section img {
-	display: block;
-	margin: 10px auto;
-}
-
 .right-section .phone-with-hand {
-	width: 50%;
-	max-width: 1700px;
-}
-
-.right-section .qr-code {
-	max-width: 230px;
+	width: 100%;
+	max-width: 855px;
 }
 
 .right-section p {
