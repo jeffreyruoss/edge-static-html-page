@@ -1,0 +1,64 @@
+body {
+	font-family: 'Mad Museo', sans-serif;
+	background-color: #121212;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+.left-section {
+	max-width: 50%;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+.learn-more {
+	color: #1e90ff;
+	text-decoration: none;
+}
+
+.download-buttons img {
+	display: block;
+	margin: 10px 0;
+	max-width: 230px;
+}
+
+.social-icons img {
+	width: 40px;
+	margin-right: 10px;
+}
+
+.right-section {
+	text-align: center;
+}
+
+.right-section img {
+	display: block;
+	margin: 10px auto;
+}
+
+.right-section .phone-with-hand {
+	width: 50%;
+	max-width: 1700px;
+}
+
+.right-section .qr-code {
+	max-width: 230px;
+}
+
+.right-section p {
+	margin-top: 10px;
+	font-size: 1.2em;
+}
