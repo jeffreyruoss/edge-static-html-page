@@ -10,6 +10,8 @@ body {
 	background-image: url('img/bg.webp');
 	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #1A1A1A;
 }
 
 .container {
@@ -20,9 +22,43 @@ body {
 
 .content {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0px 30px;
+	padding: 30px;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+	.content {
+		padding-top: 60px;
+		max-width: 640px;
+	}
+}
+
+@media screen and (min-width: 1250px) {
+	.content {
+		padding-top: 100px;
+		max-width: 85%;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 40px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.content {
+		padding-top: 120px;
+	}
+}
+
+@media screen and (min-width: 1680px) {
+	.content {
+		padding-top: 140px;
+	}
+
 }
 
 .left-section {
@@ -32,33 +68,16 @@ body {
 }
 
 @media screen and (max-width: 1249px) {
-	.content {
-		flex-direction: column;
-	}
 
 	.left-section,
 	.right-section {
 		max-width: 100%;
-	}
-
-	.download-row {
-		flex-direction: column;
-	}
-}
-
-@media screen and (min-width: 768px) {
-	.download-row {
-		flex-direction: row;
 	}
 }
 
 @media screen and (min-width: 1250px) {
 	body {
 		height: 100vh;
-	}
-
-	.content {
-		padding: 40px;
 	}
 
 	.left-section {
@@ -70,9 +89,33 @@ h1 {
 	font-size: 2.4em;
 }
 
+@media screen and (min-width: 768px) {
+	h1 {
+		font-size: 3em;
+	}
+}
+
+@media screen and (min-width: 1680px) {
+	h1 {
+		font-size: 5em;
+	}
+}
 
 p {
-	font-size: 1.2em;
+	font-size: 1em;
+	line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+	p {
+		font-size: 1.2em;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	p {
+		font-size: 1.4em;
+	}
 }
 
 a {
@@ -83,57 +126,120 @@ a:hover {
 	opacity: 0.6;
 }
 
-@media screen and (min-width: 1440px) {
-	h1 {
-		font-size: 5em;
-	}
-
-	p {
-		font-size: 1.5em;
-	}
-}
-
 .learn-more {
 	color: #1BFCA1;
 	text-decoration: none;
 }
 
 .download-row {
-	margin-top: 58px;
-	margin-bottom: 40px;
+	margin-top: 30px;
+	margin-bottom: 15px;
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+	.download-row {
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.download-row {
+		margin-top: 58px;
+		margin-bottom: 30px;
+		justify-content: start;
+		gap: 20px;
+	}
 }
 
 .download-buttons {
-	margin-right: 84px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 100%;
+}
+
+@media screen and (min-width: 400px) {
+	.download-buttons {
+		width: 50%;
+	}
 }
 
 @media (min-width: 768px) {
 	.download-buttons {
+		width: 230px;
 		margin-left: 0;
-		margin-right: 84px;
 	}
 }
 
 .download-buttons img {
 	display: block;
 	margin-bottom: 27px;
-	max-width: 230px;
+	max-width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (min-width: 400px) {
+	.download-buttons img {
+		margin-left: 0;
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+	.download-buttons img {
+		max-width: 230px;
+	}
+}
+
+@media screen and (min-width: 1250px) {
+	.download-buttons img {
+		margin-right: 84px;
+	}
 }
 
 .qr-code-section {
 	text-align: center;
 }
 
+@media screen and (min-width: 400px) {
+	.qr-code-section {
+		width: 50%;
+	}
+}
+
 .qr-code-section .qr-code {
-	max-width: 230px;
+	max-width: 150px;
+}
+
+@media screen and (min-width: 400px) {
+	.qr-code-section .qr-code {
+		text-align: right;
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+	.qr-code-section .qr-code {
+		max-width: 230px;
+	}
+}
+
+@media screen and (min-width: 1250px) {
+	.qr-code-section .qr-code {
+		text-align: left;
+	}
 }
 
 .scan-to-download {
 	margin-top: 10px;
-	font-size: 1.2em;
+	font-size: 1em;
+}
+
+@media screen and (min-width: 768px) {
+	.scan-to-download {
+		font-size: 1.2em;
+	}
 }
 
 .social-icons {
@@ -142,13 +248,14 @@ a:hover {
 }
 
 .social-icons img {
-	width: 64px;
+	width: 44px;
 	margin-right: 10px;
 }
 
 @media screen and (min-width: 768px) {
 	.social-icons img {
 		margin-right: 50px;
+		width: 64px;
 	}
 }
 
@@ -164,11 +271,14 @@ a:hover {
 }
 
 .right-section .phone-with-hand {
-	width: 100%;
+	width: 90%;
 	max-width: 855px;
 	transform: translateX(50%);
 	animation: slideIn 1s 0.5s forwards;
 	opacity: 0;
+	/* position: absolute; */
+	/* right: 0; */
+	/* display: none; */
 }
 
 .right-section p {
