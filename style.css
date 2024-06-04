@@ -4,20 +4,82 @@ body {
 	color: #fff;
 	margin: 0;
 	padding: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-image: url('img/bg.webp');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-color: #1A1A1A;
+}
+
+@media screen and (min-width: 1250px) {
+	body {
+		height: 100vh;
+	}
+}
+
+.gradient-bursts-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	overflow: hidden;
+}
+
+.gradient-burst {
+	position: absolute;
+}
+
+.gradient-burst-1 {
+	background: radial-gradient(circle at 50% 50%, #3c3c3c 0, rgba(0, 96, 77, 0) 70%);
+	width: 400px;
+	height: 400px;
+	top: -150px;
+	left: -150px;
+}
+
+.gradient-burst-2 {
+	background: radial-gradient(circle at 50% 50%, #393121 0, rgba(0, 96, 77, 0) 70%);
+	width: 700px;
+	height: 700px;
+	top: -50px;
+	right: -350px;
+}
+
+.gradient-burst-3 {
+	background: radial-gradient(circle at 50% 50%, #00604d 0, rgba(0, 96, 77, 0) 70%);
+	width: 800px;
+	height: 800px;
+	top: 300px;
+	left: -500px;
+}
+
+@media screen and (min-width: 1250px) {
+	.gradient-burst-1 {
+		width: 600px;
+		height: 600px;
+		top: 100px;
+		left: -300px;
+	}
+
+	.gradient-burst-2 {
+		width: 900px;
+		height: 900px;
+		top: -400px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.gradient-burst-3 {
+		width: 800px;
+		height: 800px;
+		top: 600px;
+		left: auto;
+		right: -400px;
+	}
 }
 
 .container {
 	width: 100%;
 	max-width: 1920px;
 	margin: 0 auto;
+	z-index: 1;
+	position: relative;
+	overflow: hidden;
 }
 
 .content {
@@ -40,11 +102,13 @@ body {
 
 @media screen and (min-width: 1250px) {
 	.content {
-		padding-top: 100px;
+		padding-top: 150px;
+		padding-left: 40px;
+		padding-right: 40px;
+		padding-bottom: 40px;
 		max-width: 85%;
 		flex-direction: row;
 		justify-content: space-between;
-		padding: 40px;
 	}
 }
 
@@ -54,7 +118,7 @@ body {
 	}
 }
 
-@media screen and (min-width: 1680px) {
+@media screen and (min-width: 1650px) {
 	.content {
 		padding-top: 140px;
 	}
@@ -62,26 +126,25 @@ body {
 }
 
 .left-section {
-	max-width: 50%;
 	opacity: 0;
 	animation: fadeIn 2s forwards;
 }
 
-@media screen and (max-width: 1249px) {
-
-	.left-section,
-	.right-section {
-		max-width: 100%;
+@media screen and (min-width: 1250px) {
+	.left-section {
+		max-width: 550px;
 	}
 }
 
-@media screen and (min-width: 1250px) {
-	body {
-		height: 100vh;
-	}
-
+@media screen and (min-width: 1440px) {
 	.left-section {
-		max-width: 50%;
+		max-width: 650px;
+	}
+}
+
+@media screen and (min-width: 1650px) {
+	.left-section {
+		max-width: 750px;
 	}
 }
 
@@ -95,7 +158,13 @@ h1 {
 	}
 }
 
-@media screen and (min-width: 1680px) {
+@media screen and (min-width: 1650px) {
+	h1 {
+		font-size: 3.5em;
+	}
+}
+
+@media screen and (min-width: 1920px) {
 	h1 {
 		font-size: 5em;
 	}
@@ -114,7 +183,13 @@ p {
 
 @media screen and (min-width: 1440px) {
 	p {
-		font-size: 1.4em;
+		font-size: 1.2em;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	p {
+		font-size: 1.3em;
 	}
 }
 
@@ -192,12 +267,6 @@ a:hover {
 	}
 }
 
-@media screen and (min-width: 1250px) {
-	.download-buttons img {
-		margin-right: 84px;
-	}
-}
-
 .qr-code-section {
 	text-align: center;
 }
@@ -243,7 +312,6 @@ a:hover {
 }
 
 .social-icons {
-	margin-bottom: 40px;
 	text-align: center;
 }
 
@@ -267,23 +335,57 @@ a:hover {
 
 .right-section {
 	text-align: center;
-	overflow: hidden;
-}
-
-.right-section .phone-with-hand {
-	width: 90%;
-	max-width: 855px;
-	transform: translateX(50%);
-	animation: slideIn 1s 0.5s forwards;
-	opacity: 0;
-	/* position: absolute; */
-	/* right: 0; */
-	/* display: none; */
+	width: 100%;
 }
 
 .right-section p {
 	margin-top: 10px;
 	font-size: 1.2em;
+}
+
+.phone-with-hand-container {
+	width: 100%;
+	height: 500px;
+	position: relative;
+	z-index: 0;
+}
+
+.phone-with-hand {
+	max-width: 400px;
+	transform: translateX(50%);
+	animation: slideIn 1s 0.5s forwards;
+	opacity: 0;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.phone-with-hand {
+		max-width: 500px;
+	}
+}
+
+@media screen and (min-width: 1250px) {
+	.phone-with-hand-container {
+		position: absolute;
+		top: 170px;
+		right: 0;
+		min-height: 75%;
+		overflow: hidden;
+	}
+
+	.phone-with-hand {
+		width: 45%;
+		max-width: 810px;
+	}
+}
+
+@media screen and (min-width: 1650px) {
+	.phone-with-hand-container {
+		top: 160px;
+	}
 }
 
 @keyframes fadeIn {
